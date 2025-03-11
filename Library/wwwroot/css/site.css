@@ -1,0 +1,10 @@
+body {
+    height: 100vh;
+}
+
+footer {
+    width: 100vw;
+    position: sticky;
+    top: calc(100% - 75px);
+    font-size: 0.85em;
+}

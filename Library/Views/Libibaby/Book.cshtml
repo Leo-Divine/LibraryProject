@@ -1,0 +1,23 @@
+﻿@model Library.Models.BookModel
+
+<div>
+    <h4>@Html.DisplayFor(model => model.Title)</h4>
+        <p class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Author): @Html.DisplayFor(model => model.Author)
+        </p>
+        <p class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Genre): @Html.DisplayFor(model => model.Genre)
+        </p>
+        <p class = "col-sm-10">
+            @Html.DisplayNameFor(model => model.ISBN): @Html.DisplayFor(model => model.ISBN)
+        </p>
+        @if (Model.AvailabilityStatus)
+        {
+            <p>This book is available | @Html.ActionLink("Check Out", "CheckOrReturnBook", Model)</p>
+        }
+        else
+        {
+            <p>This book is unavailable | @Html.ActionLink("Return Book", "CheckOrReturnBook", Model)</p>
+        }
+</div>
+<a asp-action="Catalogue">Back</a>

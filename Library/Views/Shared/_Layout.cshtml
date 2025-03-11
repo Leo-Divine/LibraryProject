@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Library</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="text-center">
+        <h1 id="header" class="display-4 m-2"><script>
+                const array = ["Libibitty", "Librady", "Librarby", "Liberty", "Librarity", "Libibibibibibibiri", "Librari", "Bilary"];
+                const text = document.createTextNode(array[Math.floor(Math.random() * array.length)]);
+                document.getElementById("header").appendChild(text);
+        </script></h1>
+    </header>
+    <nav class="navbar navbar-expand justify-content-between border-bottom px-2">
+        <ul class="navbar-nav">
+                <li>
+                    <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                </li>
+                <li>
+                    <a class="nav-link" asp-area="" asp-controller="Libibaby" asp-action="Catalogue">Catalogue</a>
+                </li>
+            </ul>
+        <form asp-controller="Libibaby" asp-action="Search" class="form d-inline my-2">
+            <div class="form-group">
+                <input class="form-control d-inline w-auto" type="text" placeholder="Search" name="searchQuery">
+                <button class="btn btn-outline-info" type="submit">Search</button>
+            </div>
+        </form>
+    </nav>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top mt-1">
+        <div class="container text-center">
+            <h3> Library</h3>
+            <p>123 E Rd, Earth</p>
+            <p>&copy; 2025 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Library.Models.BookModel>
+
+    <h1 class="text-center myt-1 mb-3">Catalogue</h1>
+<div class="container">
+        @foreach (var item in Model)
+        {
+            <div class="row">
+                <div class="col-4">
+                <h4>@Html.ActionLink(item.Title, "Book", item)</h4>
+                </div>
+                <div class="col-5">
+                    @Html.DisplayFor(modelItem => item.Author)
+                </div>
+                @if (item.AvailabilityStatus)
+                {
+                <div class="col-3">
+                        Available
+                    </div>
+                }
+                else
+                {
+                <div class="col-3">
+                        Not Available
+                    </div>
+                }
+            </div>
+        }
+</div>
+<p class="my-1">Dont see a book you like? You can add a book right <a asp-action="Add">here!</a></p>
